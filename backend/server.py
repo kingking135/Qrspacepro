@@ -415,7 +415,8 @@ async def create_restaurant(
 @api_router.get("/restaurants", response_model=List[Restaurant])
 async def get_restaurants(current_user: dict = Depends(get_current_subscribed_user)):
     restaurants = await db.restaurants.find({"user_id": current_user["id"]}).to_list(1000)
-    return restaurants
+    # Remove MongoDB ObjectId
+    return [{k: v for k, v in restaurant.items() if k != "_id"} for restaurant in restaurants]
 
 @api_router.get("/restaurants/{restaurant_id}", response_model=Restaurant)
 async def get_restaurant(
