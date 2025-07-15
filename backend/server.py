@@ -258,12 +258,13 @@ async def login(user_data: UserLogin):
         data={"sub": user["email"]}, expires_delta=access_token_expires
     )
     
-    user.pop("password_hash")
+    # Remove MongoDB ObjectId and other non-serializable fields
+    user_clean = {k: v for k, v in user.items() if k not in ["_id", "password_hash"]}
     
     return {
         "access_token": access_token,
         "token_type": "bearer",
-        "user": user
+        "user": user_clean
     }
 
 @api_router.get("/auth/me")
