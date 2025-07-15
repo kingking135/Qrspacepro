@@ -101,3 +101,134 @@
 #====================================================================================================
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
+
+user_problem_statement: "Create a full premium web app called Space QR Pro for restaurant owners to create digital menus and generate QR codes for customers. Features include secure account creation, restaurant/menu/dish management, QR code generation, public menu pages, subscription at €9.99/month, admin dashboard, and premium dark blue/beige UI design."
+
+backend:
+  - task: "Stripe subscription integration"
+    implemented: false
+    working: "NA"
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Starting implementation of Stripe subscription system for €9.99/month"
+  
+  - task: "User authentication system"
+    implemented: false
+    working: "NA"
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Need to implement user registration and login with email/password"
+  
+  - task: "Restaurant CRUD operations"
+    implemented: false
+    working: "NA"
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Restaurant creation with name, address, phone, logo management"
+  
+  - task: "Menu and dish management"
+    implemented: false
+    working: "NA"
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Menu creation linked to restaurants, dishes with images, prices, descriptions"
+  
+  - task: "QR code generation"
+    implemented: false
+    working: "NA"
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Auto-generate QR codes for each menu using qrcode library"
+
+frontend:
+  - task: "Premium UI design implementation"
+    implemented: false
+    working: "NA"
+    file: "/app/frontend/src/App.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Implement dark blue (#0B0C2A) and beige (#F5F0E6, #D6C1A3) premium design"
+  
+  - task: "Restaurant owner dashboard"
+    implemented: false
+    working: "NA"
+    file: "/app/frontend/src/App.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Dashboard for managing restaurants, menus, and dishes"
+  
+  - task: "Public menu pages"
+    implemented: false
+    working: "NA"
+    file: "/app/frontend/src/App.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Public menu viewing pages accessible via QR codes"
+  
+  - task: "Subscription payment flow"
+    implemented: false
+    working: "NA"
+    file: "/app/frontend/src/App.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Stripe checkout integration for €9.99/month subscription"
+
+metadata:
+  created_by: "main_agent"
+  version: "1.0"
+  test_sequence: 0
+  run_ui: false
+
+test_plan:
+  current_focus:
+    - "Stripe subscription integration"
+    - "User authentication system"
+    - "Premium UI design implementation"
+  stuck_tasks: []
+  test_all: false
+  test_priority: "high_first"
+
+agent_communication:
+  - agent: "main"
+    message: "Starting Space QR Pro development - focusing on Stripe integration first as it's the most complex part, then building authentication and core features"
