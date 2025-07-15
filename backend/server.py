@@ -269,9 +269,8 @@ async def login(user_data: UserLogin):
 
 @api_router.get("/auth/me")
 async def get_current_user_info(current_user: dict = Depends(get_current_active_user)):
-    user = current_user.copy()
-    user.pop("password_hash", None)
-    return user
+    user_clean = {k: v for k, v in current_user.items() if k not in ["_id", "password_hash"]}
+    return user_clean
 
 # =============================================================================
 # SUBSCRIPTION ENDPOINTS
