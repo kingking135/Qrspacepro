@@ -446,14 +446,14 @@ const Dashboard = () => {
             className={activeTab === 'restaurants' ? 'tab active' : 'tab'}
             onClick={() => setActiveTab('restaurants')}
           >
-            <Restaurant size={20} />
+            <User size={20} />
             Restaurants
           </button>
           <button 
             className={activeTab === 'menus' ? 'tab active' : 'tab'}
             onClick={() => setActiveTab('menus')}
           >
-            <Menu size={20} />
+            <FileText size={20} />
             Menus
           </button>
         </div>
